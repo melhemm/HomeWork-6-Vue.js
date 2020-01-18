@@ -1,0 +1,139 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "B", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #1fc8db;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* li {
+    padding: 0.2rem;
+} */
+
+a {
+    text-decoration: none;
+    padding: 1rem;
+    color: #f3f3f3;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+a:hover {
+    background: #71d5ee;
+    color: #3c6e7a;
+    transition-property: 3s ease;
+}
+
+/* ShowCase */
+
+#showcase {
+    background: #ebebeb;
+    overflow: hidden;
+    line-height: initial;
+    width: auto;
+}
+
+#showcase_text {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#showcase_text h2 {
+    width: auto;
+}
+
+#showcase_span {
+    color: #e5342a;
+}
+
+h5 {
+    font-size: 1rem;
+    writing-mode: vertical-rl;
+    font-weight: 100;
+}
+
+#simple_text {
+    width: 600px;
+    font-size: 1rem;
+    display: flex;
+}
+
+#simple_text p {
+    padding: 1rem;
+}
+
+#about {
+    width: auto;
+    margin: 0 auto;
+}
+
+#about_text {
+    width: 300px;
+    color: #e5342a;
+    font-size: 1rem;
+}
+
+
+#contact {
+    max-width: 600px;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+    transition: opacity .6s ease;
+}
+
+.component-fade-enter, .component-fade-leave-to {
+    opacity: 0;
+}

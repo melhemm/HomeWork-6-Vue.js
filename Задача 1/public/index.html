@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li>
+                            <router-link to="/" exact>Home</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/about">About</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/projects" exact>Projects</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/contact">Contact</router-link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <transition name="component-fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+
+    </div>
+
+
+    <script type="application/javascript">
+        const NotFound = {
+            template: `<h2>Page Not Found</h2>`
+        }
+        const Home = {
+            template: `<div id="showcase">
+                <div class="container">
+                    <div id="showcase_text">
+                        <h2>True North <br>
+                            <span id="showcase_span">Indexed.</span></h2>
+                        <h5>Epoch <br>1960—1985</h5>
+
+                    <div id="simple_text">
+                  <p> Canada Modern is a physical and digital archive of Canadian graphic design, with modernism central to its glowing heart.</p>
+                    <p>Canada Moderne est une archive physique et digitale du graphisme canadien, avec le modernisme au centre de son cœur rougeoyant.</p>
+                </div>
+                </div> 
+            </div>
+            </div> `
+        }
+
+        const About = {
+            template: ` <div id="about">
+                <div class="container">
+            <h2>Canada Modern is an archive of modernist Canadian graphic design focused on the period 1960—1985. It was conceived and produced by Canadian creative director Blair Thomson in 2017 and is the culmination of a long held ambition to curate a comprehensive national cache, whilst simultaneously addressing the absence of any such resource on a singular (red) thread.</h2>
+            <p id="about_text"> The early 60’s saw the rise of social and cultural modernization. An influx of designers aspiring to fresh futures arrived from Europe, many of whom were trained in the International style. These designers brought their disciplined training but also an opportunity to shift the industry’s focus from illustration, images and taste (commercial art), towards that of clarity and rationale (graphic design). With it, a move away from the ‘advertising and magazine’ industry of the United States. Through working alongside local talent and North American commerce, a new responsive aesthetic emerged — ‘Canada Modern’ a utilitarian foundation combined with creativity and sensuality. </p>
+            </div>
+        </div>`
+        }
+        const Projects = {
+            template: ` <div id="projects"> 
+                <div class="container">
+                    <p id= "projects_text"> We work on some of the countries most prestigious building, infrastructure and development projects. You can find a selection of our projects by choosing a category or using the search field. </p>
+                </div>
+            </div>`
+        }
+        const Contact = {
+            template: ` <div id="contact">
+            <div class="container">
+                <form>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."
+                        style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>`
+        }
+
+        const routes = [{
+                path: '/',
+                component: Home
+            },
+            {
+                path: '/about',
+                component: About
+            },
+            {
+                path: '/projects',
+                component: Projects
+            },
+            {
+                path: '/contact',
+                component: Contact
+            },
+            {
+                path: '*',
+                component: NotFound
+            }
+        ];
+
+        const router = new VueRouter({
+            // mode: 'history',
+            routes: routes
+        });
+
+        new Vue({
+            el: '#app',
+            router: router
+        });
+    </script>
+</body>
+</html>
